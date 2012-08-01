@@ -1152,7 +1152,7 @@ static int sec_bat_enable_charging(struct sec_bat_info *info, bool enable)
 		switch (info->cable_type) {
 		case CABLE_TYPE_USB:
 			val_type.intval = POWER_SUPPLY_STATUS_CHARGING;
-			val_chg_current.intval = 500;
+			val_chg_current.intval = 800;
 			info->current_avg = -1;
 			break;
 		case CABLE_TYPE_AC:
