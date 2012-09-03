@@ -358,12 +358,8 @@ static struct msm_gpiomux_config msm8960_sec_ts_configs[] = {
 #define MSM_HDMI_PRIM_PMEM_SIZE 0x4000000 /* 64 Mbytes */
 
 #ifdef CONFIG_MSM_MULTIMEDIA_USE_ION
-<<<<<<< HEAD
-#define MSM_PMEM_KERNEL_EBI1_SIZE  0x280000 /* 2.5MB */
-=======
 #define MSM_PMEM_KERNEL_EBI1_SIZE  0x65000
 #define HOLE_SIZE 0x20000
->>>>>>> d985e8e... d2: Reserve memory for ION audio
 #ifdef CONFIG_MSM_IOMMU
 #define MSM_ION_MM_SIZE     0x3800000
 #define MSM_ION_SF_SIZE_FOR_2GB                0x0
