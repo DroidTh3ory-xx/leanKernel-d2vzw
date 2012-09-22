@@ -17,3 +17,5 @@ cd zip
 zip -r lk_aosp_jb_usc_beta-v${1}.zip *
 mv lk_aosp_jb_usc_beta-v${1}.zip /tmp
 [[ $2 == "upload" ]] && /data/utils/s3_ftpupload2.sh $1
+echo
+md5sum /tmp/lk_aosp_jb_tmo_beta-v${1}.zip
