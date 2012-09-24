@@ -16,6 +16,6 @@ cd ../
 cd zip
 zip -r lk_aosp_jb_tmo_beta-v${1}.zip *
 mv lk_aosp_jb_tmo_beta-v${1}.zip /tmp
-[[ $2 == "upload" ]] && /data/utils/s3_ftpupload2.sh $1
+[[ $2 == "upload" ]] && scp -P 2222 /tmp/lk_aosp_jb_tmo_beta-v${1}.zip imoseyon@upload.goo.im:public_html/d2tmo
 echo
 md5sum /tmp/lk_aosp_jb_tmo_beta-v${1}.zip
