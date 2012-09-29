@@ -21,6 +21,11 @@ cd ../
 cd zip
 zip -r $filename *
 mv $filename /tmp
-[[ $2 == "upload" ]] && scp -P 2222 /tmp/$filename imoseyon@upload.goo.im:public_html/d2usc
+if [[ $2 == "upload" ]]; then
+  lkflash="http://imoseyon.host4droid.com/s3/$filename `md5sum /tmp/$filename | awk '{ print \$1}'` ${1}"
+  echo $lkflash > /tmp/${device}-aosp
+  /data/utils/s3_ftpupload2.sh $1 $device
+  /bin/rm -f /tmp/${device}-aosp
+fi  
 echo
-md5sum /tmp/$filename
+echo $lkflash
